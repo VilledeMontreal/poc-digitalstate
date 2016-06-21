@@ -35,3 +35,7 @@ camunda/camunda-bpm-platform:latest</pre>
  -p 80:80 \
  --link db_orocrm:db_orocrm \
  -d olidac/orocrm</pre>
+ 
+ ####Pour terminer l'installation, on doit éxécuter cette commande à l'intérieur du container:
+ <pre>docker exec -it orocrm bash</pre>
+ <pre>orocrm# app/console oro:install</pre>
