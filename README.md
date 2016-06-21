@@ -4,6 +4,7 @@ Ceci est un dépôt pour la preuve de concept avec digital state
 ##Utilisation
 Voici les étapes à suivre pour initialiser la stack digitale state:
 
+## Pour camunda:
 ####Créer un container docker postgresql avec les variables d'environnements suivantes:
 <pre>docker run --name db_camunda -v /tmp:/var/lib/postgresql \
 -e POSTGRES_USER=camunda \
@@ -19,3 +20,18 @@ Voici les étapes à suivre pour initialiser la stack digitale state:
 -e DB_PASSWORD=camunda \
 camunda/camunda-bpm-platform:latest</pre>
 
+## Pour orobap:
+####Créer un container docker mysql avec les variables d'environnements suivantes:
+<pre>docker run --name db_orocrm -v /tmp/oro:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=pass \
+-e MYSQL_DATABASE=oro_crm \
+-e MYSQL_USER=orocrm \
+-e MYSQL_PASSWORD=orocrm \ 
+-d mysql:5.5</pre>
+ 
+ ####Créer un container docker orobap avec la commande suivante:
+ <pre>docker run \
+ --name orocrm \
+ -p 80:80 \
+ --link db_orocrm:db_orocrm \
+ -d olidac/orocrm</pre>
