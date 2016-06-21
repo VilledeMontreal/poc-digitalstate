@@ -38,7 +38,9 @@ camunda/camunda-bpm-platform:latest</pre>
  
 ####Pour terminer l'installation, on doit éxécuter cette commande à l'intérieur du container:
 <pre>docker exec -it orocrm bash</pre>
-<pre>orocrm# app/console oro:install</pre>
+<pre>/var/www/orocrm# app/console oro:install</pre>
+Il est également possiblement de passer les arguments d'installation directement avec la commande console:
+<pre>/var/www/orocrm# app/console oro:install --organization-name=vdm --user-name=admin --user-email=admin@admin.com --user-firstname=admin --user-lastname=admin --user-password=admin --application-url=http://localhost/oro --drop-database --timeout=3600 --sample-data=n --env=dev</pre>
 Avec la dernière commande, oro installera
   * Les migrations des bases données
   * Les définitions de workflow
