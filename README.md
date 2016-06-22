@@ -23,7 +23,7 @@ camunda/camunda-bpm-platform:latest</pre>
 ## Pour orobap:
 ####Créer un container docker mysql avec les variables d'environnements suivantes:
 <pre>docker run --name db_orocrm -v /tmp/db_oro:/var/lib/mysql \
--e MYSQL_ROOT_PASSWORD=pass \		 
+-e MYSQL_ROOT_PASSWORD=pass \
 -e MYSQL_DATABASE=oro_crm \
 -e MYSQL_PASSWORD=orocrm \
 -d mysql:5.5</pre>
