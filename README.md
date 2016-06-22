@@ -34,7 +34,7 @@ camunda/camunda-bpm-platform:latest</pre>
  --name orocrm \
  -p 80:80 \
  --link db_orocrm:dborocrm \
- -d olidac/orocrm</pre>
+ -d olidac/orocrm:1.8.2</pre>
  
 ####Pour terminer l'installation, on doit éxécuter cette commande à l'intérieur du container:
 <pre>docker exec -it orocrm bash</pre>
