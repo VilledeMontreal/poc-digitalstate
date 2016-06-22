@@ -1,0 +1,13 @@
+odorocrm:
+   image: olidac/orocrm:1.8.2
+   ports :
+    - "80:80"
+   links:
+    - odorocrmdatabase:dborocrm
+odorocrmdatabase:
+  image: mysql:5.5
+  environment:
+     - MYSQL_ROOT_PASSWORD=root
+     - MYSQL_DATABASE=oro_crm
+     - MYSQL_USER=orocrm
+     - MYSQL_PASSWORD=orocrm
