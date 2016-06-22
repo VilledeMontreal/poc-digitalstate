@@ -1,4 +1,4 @@
-# Preuve d concept - digitalstate
+# Preuve concept - digitalstate
 Ceci est un dépôt pour la preuve de concept avec digital state
 
 ##Utilisation
