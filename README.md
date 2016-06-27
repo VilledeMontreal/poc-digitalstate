@@ -8,7 +8,7 @@ Voici les étapes à suivre pour initialiser la stack digitale state:
 ####Créer un container docker postgresql avec les variables d'environnements suivantes:
 <pre>docker run --name db_camunda -v /tmp:/var/lib/postgresql \
 -e POSTGRES_USER=camunda \
--e POSTGRES_PASSWORD=camunda \ 
+-e POSTGRES_PASSWORD=camunda \
 -e POSTGRES_DB=process-engine \
 -d postgres</pre>
 
