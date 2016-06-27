@@ -1,13 +1,39 @@
 odorocrm:
    image: olidac/orocrm:1.8.2
    ports :
-    - "80:80"
+    - "3011:80"
    links:
     - odorocrmdatabase:dborocrm
+    - camunda:camunda
+
+camunda:
+   image: camunda/camunda-bpm-platform:latest
+   environment:
+     - DB_DRIVER=org.postgresql.Driver
+     - DB_URL=jdbc:postgresql://db_camunda:5432/process-engine
+     - DB_USERNAME=camunda
+     - DB_PASSWORD=camunda
+   links:
+     - db_camunda:db_camunda
+   ports :
+     - "8080:8080"
+
 odorocrmdatabase:
-  image: mysql:5.5
-  environment:
+   image: mysql:5.5
+   environment:
      - MYSQL_ROOT_PASSWORD=root
      - MYSQL_DATABASE=oro_crm
      - MYSQL_USER=orocrm
      - MYSQL_PASSWORD=orocrm
+   volumes:
+     - /tmp/db_oro:/var/lib/mysql
+
+db_camunda:
+   image: postgres
+   container_name: db_camunda
+   environment:
+     - POSTGRES_USER=camunda
+     - POSTGRES_PASSWORD=camunda
+     - POSTGRES_DB=process-engine
+   volumes:
+     - /tmp/db_camunda:/var/lib/postgresql
