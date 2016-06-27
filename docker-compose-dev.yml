@@ -16,7 +16,7 @@ camunda:
    links:
      - db_camunda:db_camunda
    ports :
-     - "8080:8080"
+     - "3012:8080"
 
 odorocrmdatabase:
    image: mysql:5.5
