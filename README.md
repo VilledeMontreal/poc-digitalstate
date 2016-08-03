@@ -52,3 +52,15 @@ Il est également possiblement de passer les arguments d'installation directemen
 On vous demandera par la suite de configurer quelques paramètres, on aurait pu également passer ces paramètres dans la commande "oro install" initiale
 
 voir aussi [https://github.com/advancingu/OroCRMDocker](https://github.com/advancingu/OroCRMDocker)
+
+####Pour créé la stack de orocommerce
+Éxécuter la commande suivante:
+<pre>docker-compose -f <(curl https://raw.githubusercontent.com/fprieur/orocommerce/master/compose/autoinstall/docker-compose.yml) up -d</pre>
+* attendre quelques minutes pour que l'application web soit disponible<br><br>
+l'application sera ensuite disponible à l'url http://($HOSTNAME):3080 <br><br>
+pour se connecter en tant qu'admin: <br>
+http://($HOSTNAME):3080/admin<br>
+u admin@admin.com<br>
+p admin1111<br>
+
+le dépot est un fork du dépot https://github.com/djocker/orocommerce
