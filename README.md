@@ -60,7 +60,7 @@ voir aussi [https://github.com/advancingu/OroCRMDocker](https://github.com/advan
 l'application sera ensuite disponible à l'url http://($HOSTNAME):3080 <br><br>
 pour se connecter en tant qu'admin: <br>
 http://($HOSTNAME):3080/admin<br>
-u admin@admin.com<br>
+u johndoe@example.com<br>
 p admin1111<br>
 
 le dépot est un fork du dépot https://github.com/djocker/orocommerce
